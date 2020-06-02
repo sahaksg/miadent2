@@ -1,0 +1,24 @@
+
+// Fonts
+@import url("https://fonts.googleapis.com/css?family=Raleway:300,400,600");
+
+// Variables
+@import "variables";
+
+// Bootstrap
+@import "node_modules/bootstrap-sass/assets/stylesheets/bootstrap";
+
+// Animate css
+@import "~animate.css/animate.css" ;
+
+// // timeticker css
+// @import "~clockpicker/src/clockpicker.css" ;
+
+//custom css
+@import "custom";
+
+// resources/assets/sass/app.scss
+// @import '~jquery-ui/themes/base/all.css';
+
+//Font Awesome
+@import "node_modules/font-awesome/scss/font-awesome.scss";
