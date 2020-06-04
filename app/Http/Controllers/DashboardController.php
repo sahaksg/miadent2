@@ -32,7 +32,14 @@ class DashboardController extends Controller
     }
     public function editschedule()
     {
+        // $data = DB::table("orthops")
+        //     ->select('id', 'name', 'phone', 'schedule_end', 'user_id');
 
+        // $total = DB::table("appointments")
+        //     ->select('id', 'name', 'phone', 'schedule_end', 'user_id')
+        //     ->union($data)
+        //     ->get();
+        // dd($total);
         // $posts= Post::orderBy('created_at', 'DESC')->get();
         // $posts= Post::orderBy('created_at', 'DESC')->take(1)->get();
         $orthops = Orthop::orderBy('created_at', 'DESC')->paginate(6);
@@ -43,10 +50,11 @@ class DashboardController extends Controller
 
         return view('dashboard.editschedule')->with('posts', $orthops);
     }
-    public function updatetime(Request $request)
-    {
-        dd($request);
-    }
+    // public function updatetime(Request $request)
+    // {
+    //     // dd($request);
+    //     return "123";
+    // }
 
     /**
      * Show the form for creating a new resource.
@@ -100,7 +108,19 @@ class DashboardController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+
+        $this->validate($request, [
+            'name' => 'required',
+            'phone' => 'required',
+            'datetime' => '',
+        ]);
+        // dd($request->input('datetime'));
+        $post = Orthop::find($id);
+        $post->name = $request->input('name');
+        $post->phone = $request->input('phone');
+        $post->schedule_end = $request->input('datetime');
+        $post->save();
+        return redirect('/editschedule')->with('success', 'Patient Updated');
     }
 
     /**

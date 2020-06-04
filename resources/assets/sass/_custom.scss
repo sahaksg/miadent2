@@ -40,9 +40,11 @@ body {
 .fc-button:focus {
   outline: none;
 }
+
 .fc-event-container {
   color: white;
 }
+
 .fc-content:hover {
   cursor: pointer;
 }
@@ -85,11 +87,11 @@ ul {
   position: relative;
 }
 
-.main > a {
+.main>a {
   color: yellowgreen;
 }
 
-.main > a:hover {
+.main>a:hover {
   color: white;
   text-decoration: none;
 }
@@ -129,7 +131,7 @@ ul {
   border-bottom-right-radius: 10px;
 }
 
-.main:hover > .dropdownUl {
+.main:hover>.dropdownUl {
   display: block;
 }
 
@@ -180,7 +182,7 @@ select:focus {
   outline: none;
 }
 
-select > option:focus {
+select>option:focus {
   outline: none;
 }
 
@@ -204,28 +206,28 @@ input[type="text"]:focus {
   border: 3px ridge rgb(209, 202, 202);
 }
 
-.radio_table > tbody > tr > td {
+.radio_table>tbody>tr>td {
   border: 3px ridge rgb(209, 202, 202);
 }
 
-.radio_table > tbody > tr > td {
+.radio_table>tbody>tr>td {
   width: 4vw;
 }
 
-.radio_table > tbody > tr > td > a {
+.radio_table>tbody>tr>td>a {
   text-decoration: none;
 }
 
-.radio_table > tbody > tr > td > input[type="radio"] {
+.radio_table>tbody>tr>td>input[type="radio"] {
   width: 15px;
   height: 15px;
 }
 
-.radio_table > tbody > tr > td > input[type="radio"]:hover {
+.radio_table>tbody>tr>td>input[type="radio"]:hover {
   cursor: pointer;
 }
 
-.radio_table > tbody > tr:hover {
+.radio_table>tbody>tr:hover {
   background: lightblue;
   cursor: pointer;
 }
@@ -256,18 +258,19 @@ input[type="text"]:focus {
   border-radius: 10px;
 }
 
-.newmenu > ul {
+.newmenu>ul {
   padding: 0;
 }
 
-.newmenu > ul > li {
+.newmenu>ul>li {
   border: 2px solid white;
   text-align: center;
   border-radius: 10px;
   margin-bottom: 2%;
 }
 
-.newmenu > ul > li > a {
+.newmenu>ul>li>a {
   text-decoration: none;
   color: honeydew;
 }
+

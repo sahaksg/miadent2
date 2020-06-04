@@ -31,7 +31,7 @@ class PostsController extends Controller
         // $posts=Post::all();
         return view('posts.index')->with('posts', $orthops);
     }
-   
+
 
     // New Fullcalendar for admin used now for admin
     public function calendar()
@@ -361,7 +361,7 @@ class PostsController extends Controller
      */
     public function update(Request $request, $id)
     {
-        // dd($request);
+        // dd($id);
         // return "Update";
         $this->validate($request, [
             'name' => 'required',

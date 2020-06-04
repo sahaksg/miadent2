@@ -21,9 +21,18 @@
         <tbody>
             @foreach ($posts as $post)
             <tr>
-                <td><a href='/posts/{{$post->id}}'>{{$post->name}}</a></td>
-                <td>{{$post->phone}}</td>
-                {!! Form::open(['action' => ['DashboardController@updatetime', $post->id], 'method'=>'POST']) !!}
+                {!! Form::open(['action' => ['DashboardController@update', $post->id], 'method'=>'POST']) !!}
+                
+                <td>
+                    {{Form::hidden('name', $post->name)}}
+                    <p name='name' style="font-weight: bolder">{{$post->name}}</p>
+                </td>
+                <td>
+                    {{Form::hidden('phone', $post->phone)}}
+                    <p name='phone' style="font-weight: bolder">{{$post->phone}}</p>
+                </td>
+
+                
                 <td>
                     <?php 
                     $toDay=date("Y/m/d h:i");
@@ -54,7 +63,7 @@
         
 
     </table>
-    {{$posts->links()}} 
+  
 
 
 
@@ -66,7 +75,15 @@
 
 $('#test-table').DataTable({
     responsive: true,
+    "lengthMenu": [[5, 10, 25, 50, -1], [5, 10, 25, 50, "All"]]
 });
+
+
+$(this).find('pp').css({
+    color:'black',
+    fontWeight: 'bolder'
+});
+
     })
 </script>
 

@@ -41,14 +41,14 @@ Route::post('/store2', 'PostsController@store2');
 Route::post('/store3', 'PostsController@store3');
 
 Route::get('/calendar', 'PostsController@calendar');
-Route::get('/calendaruser/{id}', 'PostsController@calendaruser'); // will be used later for super-admin, currently for admin is used
-Route::get('/calendarall/{id}', 'PostsController@calendarall'); //currently used
+Route::get('/calendaruser/{id}', 'PostsController@calendaruser');
+Route::get('/calendarall/{id}', 'PostsController@calendarall');
 
 
 Auth::routes();
 
 Route::resource('dashboard', 'DashboardController');
-Route::post('/updatetime', 'DashboardController@updatetime');
+// Route::get('/updatetime', 'DashboardController@updatetime');
 Route::get('/editschedule', 'DashboardController@editschedule');
 
 Route::resource('xrays', 'XraysController');

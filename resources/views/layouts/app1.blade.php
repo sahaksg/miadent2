@@ -2,10 +2,11 @@
 <html lang="{{ app()->getLocale() }}">
     <head>
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-        <meta name="description" content="">
-        <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
-        <meta name="generator" content="Jekyll v3.8.6">
+        <meta name="description" content="MiaDent">
+        <meta name="author" content="Sahak">
         <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="keyword" content="">
         
         
 
