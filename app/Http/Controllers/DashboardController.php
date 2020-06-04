@@ -30,6 +30,23 @@ class DashboardController extends Controller
         // return view('dashboard')->with('posts', $user->posts);
         return view('dashboard')->with($data);
     }
+    public function editschedule()
+    {
+
+        // $posts= Post::orderBy('created_at', 'DESC')->get();
+        // $posts= Post::orderBy('created_at', 'DESC')->take(1)->get();
+        $orthops = Orthop::orderBy('created_at', 'DESC')->paginate(6);
+        // paginage not used for my case as i have table, commented also in posts.index
+        // $posts= DB::select('SELECT * FROM posts');
+        // $posts=Post::all();
+
+
+        return view('dashboard.editschedule')->with('posts', $orthops);
+    }
+    public function updatetime(Request $request)
+    {
+        dd($request);
+    }
 
     /**
      * Show the form for creating a new resource.

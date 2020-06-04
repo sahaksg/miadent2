@@ -7,6 +7,18 @@
 <div class="container">
     <div class="row">
       @if($user->is_admin)
+      <div class="col col-sm-2 newmenu">
+        <ul>
+          
+          <li> <a class="nav-link" href="/calendaruser/8"> <i class="fa fa-calendar" aria-hidden="true"></i> Liza</a></li>
+          <li> <a class="nav-link" href="/calendaruser/9"> <i class="fa fa-calendar" aria-hidden="true"></i> Karo</a></li>
+          <li><a class="nav-link" href="/calendar"> <i class="fa fa-calendar" aria-hidden="true"></i> Total</a></li>
+          <li><a class="nav-link" href="/editschedule"> <i class="fa fa-clock-o" aria-hidden="true"></i> Edit Schedule</a></li>
+          {{-- <li> <a class="nav-link" href="/posts"><i class="fa fa-database" aria-hidden="true"></i> DB</a></li> --}}
+          <li><a class="nav-link" href="/xrays"> <i class="fa fa-video-camera" aria-hidden="true"></i> X-RAY</a></li>
+          
+        </ul>
+      </div>
       @else
       <div class="col col-sm-2 newmenu">
         <ul>
@@ -24,25 +36,9 @@
                     <br>
                     @if($user->is_admin)
                     
-                     
-                     {{-- <form class="form-inline" role='search' method='get' action="/search" style="margin-top: 6px;"> --}}
-                     <form class="form-inline" role='search' method='get' action="/searcheach/{{$user->id}}" style="margin-top: 6px;">
-                        <div class="input-group" >
-                          <input type="text" class="form-control" placeholder="Search by Name" name='name' >
-                          <div class="input-group-btn">
-                            <button class="btn btn-secondary btn-md" type="submit"><i class="glyphicon glyphicon-search"></i></button>
-                          </div>
-                        </div>
-                        <a class="btn btn-primary" href="/posts"><i class="fa fa-database" aria-hidden="true"></i></a>
-                        <a class="btn btn-primary" href="/calendarall/{{$user->id}}">My <i class="fa fa-calendar" aria-hidden="true"></i></a>
-                        <a class="btn btn-primary" href="/calendar">Total <i class="fa fa-calendar" aria-hidden="true"></i></a>
-                        <a class="btn btn-primary" href="/xrays">X-RAY <i class="fa fa-video-camera" aria-hidden="true"></i></a>
-                        {{-- <a class="btn btn-primary" href="/ajaxRequest">Appointment <i class="fa fa-book" aria-hidden="true"></i></a> --}}
-                        {{-- <a class="btn btn-primary" href="/pages/adddoctor">Add Doctor</a> --}}
-                      </form>
                       <form class="form-inline" role='search' method='get' action="/search" style="margin-top: 6px;">
                         <div class="input-group" >
-                          <input type="text" class="form-control" placeholder="Search All" name='name' >
+                          <input type="text" class="form-control" placeholder="Search by name" name='name' >
                           <div class="input-group-btn">
                             <button class="btn btn-secondary btn-md" type="submit"><i class="glyphicon glyphicon-search"></i></button>
                           </div>
@@ -70,8 +66,9 @@
                           {{ session('status') }}
                       </div>
                   @endif
-                  @if(count($posts) ===0)
+                  @if(count($posts) ===0 && $user->id !=10)
                   <h1>You have no Patients</h1>
+                  
                   @endif
                 </div>
                     

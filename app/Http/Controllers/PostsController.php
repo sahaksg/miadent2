@@ -31,27 +31,38 @@ class PostsController extends Controller
         // $posts=Post::all();
         return view('posts.index')->with('posts', $orthops);
     }
+   
 
     // New Fullcalendar for admin used now for admin
     public function calendar()
     {
         $events = [];
-        $data = Orthop::all();
-        // dd($data);
-        if ($data->count()) {
-            foreach ($data as $key => $value) {
+        // $data = Orthop::all();
+        // $data1 = Appointment::all();
+        $data = DB::table("orthops")
+            ->select('id', 'name', 'schedule_end', 'user_id');
+
+        $total = DB::table("appointments")
+            ->select('id', 'name', 'schedule_end', 'user_id')
+            ->union($data)
+            ->get();
+
+        // dd($total);
+        if (count($total)) {
+            foreach ($total as $item) {
+                // dd($item);
                 $events[] = Calendar::event(
-                    $value->name,
+                    $item->name,
                     false,
-                    new \DateTime($value->schedule_end),
-                    new \DateTime($value->schedule_end . '+1 hour'),
+                    new \DateTime($item->schedule_end),
+                    new \DateTime($item->schedule_end . '+1 hour'),
 
                     null,
                     // Add url
 
-                    [
-                        'url' => "/posts/" . $value->id
-                    ]
+                    // [
+                    //     'url' => "/posts/" . $item->id
+                    // ]
                 );
             }
         }
@@ -96,7 +107,43 @@ class PostsController extends Controller
             }
         }
         $calendar = Calendar::addEvents($events);
-        return view('posts/calendar')->with('calendar',  $calendar)->with("id", $id);
+        return view('posts/calendarall')->with('calendar',  $calendar)->with("id", $id);
+    }
+
+    public function    calendaruser($id)
+    {
+
+
+        $events = [];
+
+        $data = DB::table("orthops")
+            ->select('id', 'name', 'schedule_end', 'user_id')
+            ->where('user_id', $id);
+
+        $total = DB::table("appointments")
+            ->select('id', 'name', 'schedule_end', 'user_id')
+            ->where('user_id', $id)
+            ->union($data)
+            ->get();
+        if (count($total)) {
+            foreach ($total as $item) {
+                // dd($item);
+                $events[] = Calendar::event(
+                    $item->name,
+                    false,
+                    new \DateTime($item->schedule_end),
+                    new \DateTime($item->schedule_end . '+1 hour'),
+                    null,
+                    // Add url
+                    [
+                        // 'url' => "/posts/".$item->id
+                        // 'url' => "#"
+                    ]
+                );
+            }
+        }
+        $calendar = Calendar::addEvents($events);
+        return view('posts/calendaruser')->with('calendar',  $calendar)->with("id", $id);
     }
 
 

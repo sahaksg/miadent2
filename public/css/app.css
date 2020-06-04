@@ -11416,7 +11416,7 @@ body {
 
 @-webkit-keyframes blink {
   from {
-    background-color: #B4CFDB;
+    background-color: #b4cfdb;
   }
 
   to {
@@ -11426,7 +11426,7 @@ body {
 
 @keyframes blink {
   from {
-    background-color: #B4CFDB;
+    background-color: #b4cfdb;
   }
 
   to {
@@ -11444,6 +11444,10 @@ body {
 
 .fc-button:focus {
   outline: none;
+}
+
+.fc-event-container {
+  color: white;
 }
 
 .fc-content:hover {
@@ -11653,7 +11657,7 @@ input[type=text]:focus {
 
 .newmenu {
   border: 4px groove gray;
-  background-color: #343A40;
+  background-color: #343a40;
   padding: 2em 1em;
   border-radius: 10px;
 }

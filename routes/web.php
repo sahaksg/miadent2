@@ -39,14 +39,17 @@ Route::resource('posts', 'PostsController'); // patient table controller routes
 Route::post('/store1', 'PostsController@store1'); // use POST for image to work
 Route::post('/store2', 'PostsController@store2');
 Route::post('/store3', 'PostsController@store3');
-Route::get('/calendar', 'PostsController@calendar'); 
-Route::get('/calendaruser', 'PostsController@calendaruser'); // will be used later for super-admin, currently for admin is used
+
+Route::get('/calendar', 'PostsController@calendar');
+Route::get('/calendaruser/{id}', 'PostsController@calendaruser'); // will be used later for super-admin, currently for admin is used
 Route::get('/calendarall/{id}', 'PostsController@calendarall'); //currently used
 
 
 Auth::routes();
 
 Route::resource('dashboard', 'DashboardController');
+Route::post('/updatetime', 'DashboardController@updatetime');
+Route::get('/editschedule', 'DashboardController@editschedule');
 
 Route::resource('xrays', 'XraysController');
 Route::get('/searchxray', 'XraysController@search');

@@ -3,20 +3,29 @@
 @extends('layouts.app1')
 
 @section('content')
-<div class="jumbotron" style="padding-top: 1%">
-  <p style="margin-top:0; text-align:center">New Patient Card:</p>
+<div class="jumbotron" style="padding-top: 1%; margin:0">
+  {{-- <p style="margin-top:0; text-align:center">New Patient Card:</p> --}}
   
-  {{-- <div class="container" style="text-align:center; border: 1px solid red; height: 85vh; padding-top:0"> --}}
+  
     {!! Form::open(['action' => 'SkizbController@store', 'method'=>'POST', 'enctype'=>'multipart/form-data']) !!}
-    <div class="row" style="text-align:center; margin-bottom:1%">
-      {{Form::label('name', 'Patient Name')}}
-      {{Form::text('name', '', ['placeholder'=>'name...'])}}
-      {{Form::label('phone', 'Phone')}}
-      {{Form::text('phone', '', ['placeholder'=>'phone...'])}}
-      {{Form::select('gender', ['male' => 'Male', 'female' => 'Female'], null, ['placeholder' => 'Gender'],['class'=>'form-control'])}} 
+    <div class="row ml-5 " style="text-align:center; margin-bottom:1%">
+      <div class="col col-md-4">
+        {{Form::label('name', 'Patient Name')}}
+        {{Form::text('name', '', ['placeholder'=>'name...'])}}
+      </div>
+      <div class="col col-md-3">
+        {{Form::label('phone', 'Phone')}}
+        {{Form::text('phone', '', ['placeholder'=>'phone...'])}}
+      </div>
+      <div class="col col-md-2">
+        {{Form::select('gender', ['male' => 'Male', 'female' => 'Female'], null, ['placeholder' => 'Gender'],['class'=>'form-control'])}} 
+      </div>
     </div>
     <div class="row" >
-      <div class="col col-md-6">
+      <div class="col col-md-1">
+        <a href='/skizbs' class="btn btn-success"><i class="fa fa-chevron-left" aria-hidden="true"></i> BACK</a>
+      </div>
+      <div class="col col-md-5">
         <table  align="right"  class="radio_table" >
           <tr>
             
@@ -145,7 +154,7 @@
         </table>
         
       </div>
-      <div class="col col-md-6" >
+      <div class="col col-md-5" >
         <table border="1" align="left" class="radio_table" >
           <tr>
             <th>N/N</th>
@@ -274,25 +283,12 @@
         </table>
         
       </div>
-      
-      
-
-    </div>
-    <div class="row" style="margin-top:1%">
-      <div class="col col-md-4">
-        <a href='/skizbs' class="btn btn-primary"><i class="fa fa-chevron-left" aria-hidden="true"></i> BACK</a>
-      </div>
-      <div class="col col-md-4" style="text-align:center">
-        <a href='/dashboard' class="btn btn-primary" ><i class="fa fa-tasks" aria-hidden="true"></i> DASHBOARD</a>
-      </div>
-      <div class="col col-md-4">
+      <div class="col col-md-1">
         {{Form::hidden('userid', '')}}
-        {{ FORM::button('<i class="fa fa-database" aria-hidden="true"></i> Save to DB',['class'=>'btn btn-primary pull-right','type'=>'submit']) }}
-        {{-- {{Form::submit('Save to DB!', ['class'=>'btn btn-primary pull-right'])}} --}}
+        {{ FORM::button('<i class="fa fa-database" aria-hidden="true"></i> Save to DB',['class'=>'btn btn-success pull-right','type'=>'submit']) }}
         {!! Form::close() !!}
       </div>
     </div>
-    
   </div>
   
   
