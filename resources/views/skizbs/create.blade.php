@@ -13,7 +13,7 @@
         {{Form::label('name', 'Patient Name')}}
         {{Form::text('name', '', ['placeholder'=>'name...'])}}
       </div>
-      <div class="col col-md-3">
+      <div class="col col-md-4">
         {{Form::label('phone', 'Phone')}}
         {{Form::text('phone', '', ['placeholder'=>'phone...'])}}
       </div>

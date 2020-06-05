@@ -31,15 +31,15 @@
         <div class="col col-md-3 ml-5" style="text-align:center">
           Orthopedy
         </div>
-        <div class="col col-md-3" style="text-align:center">
+        <div class="col col-md-4 ml-4" style="text-align:center">
           Therapy
         </div>
-        <div class="col col-md-3" style="text-align:center">
+        <div class="col col-md-4" style="text-align:center">
           Surgery
         </div>
       </div>
       <div class="row">
-        <div class="col-md-1">
+        <div class="col col-md-1">
           {{Form::label('ceramics', 'Ceramics')}}
           <br>
           {{Form::label('toothBridge', 'ToothBridge')}}
@@ -48,7 +48,7 @@
           <br>
           {{Form::label('dentalCrown', 'Vinir')}}
         </div>
-        <div class="col-md-2">
+        <div class="col col-md-3">
           {{Form::text('ceramictooth', $post->ceramics, ['id'=>'ort1'])}}
             <br>
             {{Form::text('toothBr', $post->tbridge, [ 'id'=>'ort2'])}}
@@ -57,7 +57,7 @@
             <br>
             {{Form::text('dcrown', $post->dcrown, [ 'id'=>'ort4'])}}
          </div>
-         <div class="col-md-1">
+         <div class="col col-md-1">
           {{Form::label('fill', 'Fill')}}
           <br>
           {{Form::label('endos', 'Endo')}}
@@ -70,7 +70,7 @@
           <br>
           {{Form::label('rcf', 'RCF')}}
         </div>
-        <div class="col-md-2">
+        <div class="col col-md-3">
           {{Form::text('fill', $post->fill )}}
           <br>
           {{Form::text('endos', $post->endos)}}
@@ -83,7 +83,7 @@
           <br>
           {{Form::text('rcf', $post->rcf)}}
         </div>
-        <div class="col-md-1">
+        <div class="col col-md-1">
           {{Form::label('remove', 'Remove')}}
           <br>
           {{Form::label('clean', 'Clean')}}
@@ -93,7 +93,7 @@
           {{Form::label('scale', 'Scale')}}
           <br><br>
         </div>
-        <div  class="col-md-4">
+        <div  class="col col-md-3">
           {{Form::text('remove', $post->remove)}}
           <br>
           {{Form::text('clean', $post->clean)}}

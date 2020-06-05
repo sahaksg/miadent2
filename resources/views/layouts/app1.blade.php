@@ -15,24 +15,32 @@
         <meta name="csrf-token" content="{{ csrf_token() }}">
 
         <!-- Fonts -->
-        <link href="https://fonts.googleapis.com/css?family=Raleway:100,600" rel="stylesheet" type="text/css">
+        {{-- <link href="https://fonts.googleapis.com/css?family=Raleway:100,600" rel="stylesheet" type="text/css"> --}}
 
         <!-- Styles -->
         
-        <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-        
-        <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/clockpicker/0.0.7/bootstrap-clockpicker.css" integrity="sha256-WzVuf5oOPfz9nfgb4l3sFKzwoa++0DJdjLJkLWVgvhs=" crossorigin="anonymous" />
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/2.2.7/fullcalendar.min.css"/>
+        {{-- <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous"> --}}
+        <link href="{{ asset('css/bootstrap.min.css') }}" rel="stylesheet">
+        {{-- <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css"> --}}
+        <link href="{{ asset('css/jquery-ui.css') }}" rel="stylesheet">
+        {{-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/clockpicker/0.0.7/bootstrap-clockpicker.css" integrity="sha256-WzVuf5oOPfz9nfgb4l3sFKzwoa++0DJdjLJkLWVgvhs=" crossorigin="anonymous" /> --}}
+        <link href="{{ asset('css/clockpicker.css') }}" rel="stylesheet">
+        {{-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/2.2.7/fullcalendar.min.css"/> --}}
+        <link href="{{ asset('css/fullcalendar.min.css') }}" rel="stylesheet">
         {{-- <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.21/css/jquery.dataTables.css"> --}}
         <link href="{{ asset('css/app.css') }}" rel="stylesheet">
         <link href="{{ asset('css/datatables.css') }}" rel="stylesheet">
+        
         <script src="{{ asset('js/app.js') }}"></script>
         <script src="{{ asset('js/datatables.js') }}"></script>
-        <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js" integrity="sha256-4iQZ6BVL4qNKlQ27TExEhBN1HFPvAvAMbFavKKosSWQ=" crossorigin="anonymous"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/clockpicker/0.0.7/bootstrap-clockpicker.min.js" integrity="sha256-LPgEyZbedErJpp8m+3uasZXzUlSl9yEY4MMCEN9ialU=" crossorigin="anonymous"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.9.0/fullcalendar.min.js" integrity="sha256-QvhPq+evNjd8JyxSOU5KL3jPYTD7+gWVev1OH763SL0=" crossorigin="anonymous"></script>
+        {{-- <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script> --}}
+        <script src="{{ asset('js/jquery-ui.js') }}"></script>
+        {{-- <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js" integrity="sha256-4iQZ6BVL4qNKlQ27TExEhBN1HFPvAvAMbFavKKosSWQ=" crossorigin="anonymous"></script> --}}
+        <script src="{{ asset('js/moment.min.js') }}"></script>
+        {{-- <script src="https://cdnjs.cloudflare.com/ajax/libs/clockpicker/0.0.7/bootstrap-clockpicker.min.js" integrity="sha256-LPgEyZbedErJpp8m+3uasZXzUlSl9yEY4MMCEN9ialU=" crossorigin="anonymous"></script> --}}
+        <script src="{{ asset('js/clockpicker.js') }}"></script>
+        {{-- <script src="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.9.0/fullcalendar.min.js" integrity="sha256-QvhPq+evNjd8JyxSOU5KL3jPYTD7+gWVev1OH763SL0=" crossorigin="anonymous"></script> --}}
+        <script src="{{ asset('js/fullcalendar.min.js') }}"></script>
 
         <style>
            .bd-placeholder-img {
@@ -54,7 +62,7 @@
                  
         </style>
     </head>
-    <body   >
+    <body>
         <div id="app">
             <div id='bg'>
             @include('inc.navbaruser')
@@ -66,10 +74,14 @@
             </div>
         </div>
         
-
-        <script src="/vendor/unisharp/laravel-ckeditor/ckeditor.js"></script>
-        <script src="/vendor/unisharp/laravel-ckeditor/adapters/jquery.js"></script>
-        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+       
+        {{-- <script src="/vendor/unisharp/laravel-ckeditor/ckeditor.js"></script> --}}
+        <script src="{{ asset('js/ckeditor.js') }}"></script>
+        {{-- <script src="/vendor/unisharp/laravel-ckeditor/adapters/jquery.js"></script> --}}
+        <script src="{{ asset('js/ckedit_ad.js') }}"></script>
+        
+        {{-- <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script> --}}
+        <script src="{{ asset('js/bootstrap.min.js') }}"></script>
         {{-- <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.21/js/jquery.dataTables.js"></script> --}}
 
         <script>

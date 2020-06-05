@@ -16,6 +16,7 @@
           <li><a class="nav-link" href="/editschedule"> <i class="fa fa-clock-o" aria-hidden="true"></i> Edit Schedule</a></li>
           {{-- <li> <a class="nav-link" href="/posts"><i class="fa fa-database" aria-hidden="true"></i> DB</a></li> --}}
           <li><a class="nav-link" href="/xrays"> <i class="fa fa-video-camera" aria-hidden="true"></i> X-RAY</a></li>
+          <li><a class="nav-link" href="/posts"> <i class="fa fa-database" aria-hidden="true"></i> DB</a></li>
           
         </ul>
       </div>
@@ -44,6 +45,7 @@
                           </div>
                         </div>
                       </form>
+                      {{-- <a class="btn btn-primary" href="/posts">DB</a> --}}
                     @else
                       <form class="form-inline" role='search' method='get' action="/searcheach/{{$user->id}}" style="margin-top: 6px;">
                         <div class="input-group" >
@@ -52,7 +54,7 @@
                             <button class="btn btn-secondary btn-md" type="submit"><i class="glyphicon glyphicon-search"></i></button>
                           </div>
                         </div>
-                        {{-- <a class="btn btn-primary" href="/posts">DB</a> --}}
+                        
                         {{-- <a class="btn btn-primary" href="/calendaruser">Calendar</a> --}}
                     {{-- <a class="btn btn-primary" href="/calendarall/{{$user->id}}">My <i class="fa fa-calendar" aria-hidden="true"></i></a> --}}
                         {{-- <a class="btn btn-primary" href="/pages/adddoctor">Add Doctor</a> --}}

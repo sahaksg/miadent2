@@ -2,9 +2,8 @@
 <html lang="{{ app()->getLocale() }}">
     <head>
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-        <meta name="description" content="">
-        <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
-        <meta name="generator" content="Jekyll v3.8.6">
+        <meta name="description" content="MiaDent">
+        <meta name="author" content="Sahak">
         <meta charset="utf-8">
         
         
@@ -14,7 +13,7 @@
         <meta name="csrf-token" content="{{ csrf_token() }}">
 
         <!-- Fonts -->
-        <link href="https://fonts.googleapis.com/css?family=Raleway:100,600" rel="stylesheet" type="text/css">
+        {{-- <link href="https://fonts.googleapis.com/css?family=Raleway:100,600" rel="stylesheet" type="text/css"> --}}
 
         <!-- Styles -->
         <link href="{{ asset('css/app.css') }}" rel="stylesheet">
@@ -76,11 +75,11 @@
         </div>
         
 
-        <script src="/vendor/unisharp/laravel-ckeditor/ckeditor.js"></script>
-        <script src="/vendor/unisharp/laravel-ckeditor/adapters/jquery.js"></script>
+        <script src="{{ asset('js/ckeditor.js') }}"></script>
+        <script src="{{ asset('js/ckedit_ad.js') }}"></script>
         <script>
             $(document).ready(function(){
-                // alert("Hello Jquery!")
+                // alert("app2")
                 $(".chk_surg").change(function () { // atamner
 
                     if ($(this).prop("checked") == true) {

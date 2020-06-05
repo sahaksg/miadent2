@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use App\Post;
 use App\Orthop;
 use App\Initials;
+
 use DB;
 use MaddHatter\LaravelFullcalendar\Facades\Calendar;
 use Illuminate\Support\Facades\Schema; //might be not needed
@@ -473,6 +474,17 @@ class PostsController extends Controller
     public function search()
     {
         $searchKey = \Request::get('name');
+        // $data = DB::table("orthops")
+        //     ->select('name',  'user_id')
+        //     ->where('name', 'like', "%$searchKey%");
+
+        // $total = DB::table("users")
+        //     ->select('id', 'name')
+        //     ->where('id', '9')
+        //     ->union($data)
+        //     ->get();
+        // dd($total);
+
         // $post = Post::where('name', 'like', '%'.$searchKey.'%')->orderBy('id');
 
 
@@ -488,14 +500,10 @@ class PostsController extends Controller
     {
         $searchKey = \Request::get('name');
         // dd($searchKey);
-        // $post = Post::where('name', 'like', '%'.$searchKey.'%')->orderBy('id');
 
-
-        // $posts= Orthop::where('name', 'like', '%'.$searchKey.'%')->paginate(6);
-        // $posts= DB::query("SELECT * FROM orthops WHERE name LIKE '%$searchKey% AND WHERE'");
         $posts = DB::table("orthops")->where('name', 'like', "%$searchKey%")->where('user_id', $id)->paginate(6);
         // dd($posts);
 
-        return view('posts.search')->with('posts', $posts);
+        return view('posts.searcheach')->with('posts', $posts);
     }
 }

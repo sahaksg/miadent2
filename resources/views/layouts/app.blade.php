@@ -2,9 +2,8 @@
 <html lang="{{ app()->getLocale() }}">
     <head>
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-        <meta name="description" content="">
-        <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
-        <meta name="generator" content="Jekyll v3.8.6">
+        <meta name="description" content="MiaDent">
+        <meta name="author" content="Sahak">
         <meta charset="utf-8">
         
         
@@ -14,10 +13,11 @@
         <meta name="csrf-token" content="{{ csrf_token() }}">
 
         <!-- Fonts -->
-        <link href="https://fonts.googleapis.com/css?family=Raleway:100,600" rel="stylesheet" type="text/css">
+        {{-- <link href="https://fonts.googleapis.com/css?family=Raleway:100,600" rel="stylesheet" type="text/css"> --}}
 
         <!-- Styles -->
         <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+        <script src="{{ asset('js/app.js') }}"></script>
         
         
         <style>
@@ -79,14 +79,15 @@
             </div>
         </div>
         
-        <script src="{{ asset('js/app.js') }}"></script>
-        <script src="/vendor/unisharp/laravel-ckeditor/ckeditor.js"></script>
-        <script src="/vendor/unisharp/laravel-ckeditor/adapters/jquery.js"></script>
-        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
         
+      
+        <script src="{{ asset('js/ckeditor.js') }}"></script>
+        <script src="{{ asset('js/ckedit_ad.js') }}"></script>
+        {{-- <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script> --}}
+        <script src="{{ asset('js/bootstrap.min.js') }}"></script>
         <script>
             $(document).ready(function(){
-                // alert("Hello Jquery!")
+                // alert("app")
                 $(".chk_surg").change(function () { // atamner
 
                     if ($(this).prop("checked") == true) {

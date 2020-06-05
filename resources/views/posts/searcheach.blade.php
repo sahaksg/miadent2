@@ -8,7 +8,7 @@
     <h3>Found <b>{{count($posts)}}</b> patient(s)</h3>
     {{-- <a class="btn btn-primary" href='/dashboard'>Dashboard</a> --}}
     @if(count($posts) >0)
-    <table id='test-table' class="table  table-hover table-responsive table-cursor w-100 d-block d-md-table" >
+    <table id='test-table2' class="table  table-hover table-responsive table-cursor w-100 d-block d-md-table" >
         <thead class='thead-info'>
             <tr>
                 <th>Name</th>
@@ -16,7 +16,7 @@
                 <th>Gender</th>
                 {{-- <th>Doctor</th> --}}
                 <th>Registered at</th>
-                <th>Next Visit</th>
+                <th>Updated at</th>
                 <th>Notes</th>
                 
             </tr>
@@ -24,12 +24,12 @@
         <tbody>
             @foreach ($posts as $post)
             <tr>
-                <td>{{$post->name}}</td>
+                <td><a href='/posts/{{$post->id}}'>{{$post->name}}</a></td>
                 <td>{{$post->phone}}</td>
                 <td>{{$post->pgender}}</td>
                 {{-- <td>{{$post->user->name}}</td> --}}
                 <td>{{$post->created_at}}</td>
-                <td>{{$post->schedule_end}}</td>
+                <td>{{$post->updated_at}}</td>
                 <td>{!!$post->notes!!}</td>
             </tr>
             
@@ -49,7 +49,7 @@
 <script>
     $(document).ready(function(){
 
-$('#test-table').DataTable({
+$('#test-table2').DataTable({
     responsive: true,
 });
     })
