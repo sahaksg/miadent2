@@ -23,6 +23,7 @@
       <table border="1" align="center" class="radio_table">
         <tr>
           <th>N/N</th>
+          <th>Inpl</th>
           <th>Ebdo</th>
           <th>Fill</th>
           <th>Extr</th>
@@ -73,8 +74,17 @@
             
               if($value!==""){
                 switch ($value){
+                  case 'inpl':
+                      echo "<tr><td>".$key."</td>
+                            <td>X</td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td></tr>";
+                  break;
                   case 'fill':
                       echo "<tr><td>".$key."</td>
+                            <td></td>
                             <td></td>
                             <td>X</td>
                             <td></td>
@@ -82,6 +92,7 @@
                   break;
                   case 'endo':
                   echo "<tr><td>".$key."</td>
+                        <td></td>
                         <td>X</td>
                         <td></td>
                         <td></td>
@@ -91,11 +102,13 @@
                   echo "<tr><td>".$key."</td>
                       <td></td>
                       <td></td>
+                      <td></td>
                       <td>X</td>
                       <td></td></tr>";
                   break;
                   case 'crown':
                   echo "<tr><td>".$key."</td>
+                      <td></td>
                       <td></td>
                       <td></td>
                       <td></td>

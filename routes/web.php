@@ -17,6 +17,7 @@ Route::get('/', function () {
 
 Route::get('/search', 'PostsController@search');
 Route::get('/searcheach/{id}', 'PostsController@searcheach');
+Route::get('/searchhistory/{id}', 'PostsController@searchhistory');
 Route::get('/', 'PagesController@index');
 Route::get('/start', 'PagesController@startup');
 Route::get('/s', 'PagesController@services1');
@@ -50,6 +51,8 @@ Auth::routes();
 Route::resource('dashboard', 'DashboardController');
 // Route::get('/updatetime', 'DashboardController@updatetime');
 Route::get('/editschedule', 'DashboardController@editschedule');
+Route::get('/editinitschedule', 'DashboardController@editinitschedule');
+Route::get('/updateapp/{id}', 'DashboardController@updateapp');
 
 Route::resource('xrays', 'XraysController');
 Route::get('/searchxray', 'XraysController@search');

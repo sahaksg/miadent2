@@ -11662,12 +11662,16 @@ input[type=text]:focus {
   border-radius: 10px;
 }
 
+.newmenu:hover {
+  border: 4px groove green;
+}
+
 .newmenu > ul {
   padding: 0;
 }
 
 .newmenu > ul > li {
-  border: 2px solid white;
+  border: 7px ridge gray;
   text-align: center;
   border-radius: 10px;
   margin-bottom: 2%;
@@ -11676,6 +11680,23 @@ input[type=text]:focus {
 .newmenu > ul > li > a {
   text-decoration: none;
   color: honeydew;
+}
+
+.decor:hover {
+  background-color: #DA7108;
+}
+
+#dropdecor {
+  background-color: #343A40;
+  border: 0px;
+}
+
+#dropdecor > a {
+  color: white;
+}
+
+#dropdecor > a:hover {
+  color: black;
 }
 
 /*!

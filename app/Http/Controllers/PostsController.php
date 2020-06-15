@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use App\Post;
 use App\Orthop;
 use App\Initials;
+use App\Vis;
 
 use DB;
 use MaddHatter\LaravelFullcalendar\Facades\Calendar;
@@ -454,6 +455,31 @@ class PostsController extends Controller
         // dd($post->schedule_end);
 
         $post->save();
+
+        $visit = new Vis();
+        $visit->name = $request->input('name');
+        $visit->phone = $request->input('phone');
+        $visit->pgender = $request->input('gender');
+        $visit->ceramics = $request->input('ceramictooth');
+        $visit->tbridge = $request->input('toothBr');
+        $visit->zirkon = $request->input('zirkon');
+        $visit->dcrown = $request->input('dcrown');
+        $visit->dtooth = $request->input('damask');
+        $visit->remove = $request->input('remove');
+        $visit->scale = $request->input('scale');
+        $visit->clean = $request->input('clean');
+        $visit->inplant = $request->input('inplant');
+        $visit->fill = $request->input('fill');
+        $visit->endos = $request->input('endos');
+        $visit->cosm = $request->input('cosm');
+        $visit->comp = $request->input('comp');
+        $visit->retreat = $request->input('retreat');
+        $visit->rcf = $request->input('rcf');
+        $visit->notes = $request->input('notes');
+        $visit->schedule_end = $request->input('datetime');
+        $visit->user_id =  auth()->user()->id;
+        // dd($visit);
+        $visit->save();
         return redirect('/dashboard')->with('success', 'Patient Updated');
     }
 
@@ -505,5 +531,16 @@ class PostsController extends Controller
         // dd($posts);
 
         return view('posts.searcheach')->with('posts', $posts);
+    }
+    public function searchhistory($id)
+    {
+        // dd($id);
+        $searchKey = \Request::get('name');
+
+        $posts = DB::table("vis")->where('name', 'like', "%$searchKey%")->where('user_id', $id)->get();
+        // dd($posts);
+        // dd(count($posts));
+
+        return view('posts.searchhistory')->with('posts', $posts);
     }
 }

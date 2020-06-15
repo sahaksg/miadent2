@@ -1,6 +1,14 @@
 @extends('layouts.app1')
 
 @section('content')
+<div class="panel-body">
+  @if (session('status'))
+      <div class="alert alert-success">
+          {{ session('status') }}
+      </div>
+  
+  @endif
+</div>
 <div class="jumbotron" >
   <p style="margin-top:0; text-align:center;">Initial Patients Registry:</p>
   <div class="row" style="text-align:center">
