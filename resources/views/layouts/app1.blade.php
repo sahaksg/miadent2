@@ -41,7 +41,7 @@
         <script src="{{ asset('js/clockpicker.js') }}"></script>
         {{-- <script src="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.9.0/fullcalendar.min.js" integrity="sha256-QvhPq+evNjd8JyxSOU5KL3jPYTD7+gWVev1OH763SL0=" crossorigin="anonymous"></script> --}}
         <script src="{{ asset('js/fullcalendar.min.js') }}"></script>
-
+        
         <style>
            .bd-placeholder-img {
         font-size: 1.125rem;
@@ -83,14 +83,17 @@
         {{-- <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script> --}}
         <script src="{{ asset('js/bootstrap.min.js') }}"></script>
         {{-- <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.21/js/jquery.dataTables.js"></script> --}}
-
+        
         <script>
+      
+
             $(document).ready(function(){
 
                 // $('#test-table').DataTable({
                 //     responsive: true,
                 // });
                
+
 
                
                 $(this).find(".fc-content").mouseenter(function(){

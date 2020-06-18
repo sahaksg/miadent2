@@ -189,7 +189,8 @@
                   $("#ale").css({
                     display: "block"
                   })
-                  $("#ale").html("<h3>Appointment Successully Booked!</h3>")
+
+                   $("#ale").html("<h3>Appointment Successully Booked!</h3>")
             } 
       })
     })

@@ -28,75 +28,74 @@
       <div class="col col-md-5">
         <table  align="right"  class="radio_table" >
           <tr>
-            
-            <th>Endo</th>
-            <th>Fill</th>
-            <th>Extr</th>
             <th>Crown</th>
+            <th>Extr</th>
+            <th>Fill</th>
+            <th>Endo</th>
             <th>Inpl</th>
             <th>N/N</th>
           </tr>
           <tr>
-            <td>{{Form::radio('t11', 'endo')}}</td>
-            <td>{{Form::radio('t11', 'fill')}}</td>
-            <td>{{Form::radio('t11', 'extr')}}</td>
             <td>{{Form::radio('t11', 'crown')}}</td>
+            <td>{{Form::radio('t11', 'extr')}}</td>
+            <td>{{Form::radio('t11', 'fill')}}</td>
+            <td>{{Form::radio('t11', 'endo')}}</td>
             <td>{{Form::radio('t11', 'inpl')}}</td>
             <td>11</td>
           </tr>
           <tr>
-            <td>{{Form::radio('t12', 'endo')}}</td>
-            <td>{{Form::radio('t12', 'fill')}}</td>
-            <td>{{Form::radio('t12', 'extr')}}</td>
             <td>{{Form::radio('t12', 'crown')}}</td>
+            <td>{{Form::radio('t12', 'extr')}}</td>
+            <td>{{Form::radio('t12', 'fill')}}</td>
+            <td>{{Form::radio('t12', 'endo')}}</td>
             <td>{{Form::radio('t12', 'inpl')}}</td>
             <td>12</td>
           </tr>
           <tr>
-            <td>{{Form::radio('t13', 'endo')}}</td>
-            <td>{{Form::radio('t13', 'fill')}}</td>
-            <td>{{Form::radio('t13', 'extr')}}</td>
             <td>{{Form::radio('t13', 'crown')}}</td>
+            <td>{{Form::radio('t13', 'extr')}}</td>
+            <td>{{Form::radio('t13', 'fill')}}</td>
+            <td>{{Form::radio('t13', 'endo')}}</td>
             <td>{{Form::radio('t13', 'inpl')}}</td>
             <td>13</td>
           </tr>
           <tr>
-            <td>{{Form::radio('t14', 'endo')}}</td>
-            <td>{{Form::radio('t14', 'fill')}}</td>
-            <td>{{Form::radio('t14', 'extr')}}</td>
             <td>{{Form::radio('t14', 'crown')}}</td>
+            <td>{{Form::radio('t14', 'extr')}}</td>
+            <td>{{Form::radio('t14', 'fill')}}</td>
+            <td>{{Form::radio('t14', 'endo')}}</td>
             <td>{{Form::radio('t14', 'inpl')}}</td>
             <td>14</td>
           </tr>
           <tr>
-            <td>{{Form::radio('t15', 'endo')}}</td>
-            <td>{{Form::radio('t15', 'fill')}}</td>
-            <td>{{Form::radio('t15', 'extr')}}</td>
             <td>{{Form::radio('t15', 'crown')}}</td>
+            <td>{{Form::radio('t15', 'extr')}}</td>
+            <td>{{Form::radio('t15', 'fill')}}</td>
+            <td>{{Form::radio('t15', 'endo')}}</td>
             <td>{{Form::radio('t15', 'inpl')}}</td>
             <td>15</td>
           </tr>
           <tr>
-            <td>{{Form::radio('t16', 'endo')}}</td>
-            <td>{{Form::radio('t16', 'fill')}}</td>
-            <td>{{Form::radio('t16', 'extr')}}</td>
             <td>{{Form::radio('t16', 'crown')}}</td>
+            <td>{{Form::radio('t16', 'extr')}}</td>
+            <td>{{Form::radio('t16', 'fill')}}</td>
+            <td>{{Form::radio('t16', 'endo')}}</td>
             <td>{{Form::radio('t16', 'inpl')}}</td>
             <td>16</td>
           </tr>
           <tr>
-            <td>{{Form::radio('t17', 'endo')}}</td>
-            <td>{{Form::radio('t17', 'fill')}}</td>
-            <td>{{Form::radio('t17', 'extr')}}</td>
             <td>{{Form::radio('t17', 'crown')}}</td>
+            <td>{{Form::radio('t17', 'extr')}}</td>
+            <td>{{Form::radio('t17', 'fill')}}</td>
+            <td>{{Form::radio('t17', 'endo')}}</td>
             <td>{{Form::radio('t17', 'inpl')}}</td>
             <td>17</td>
           </tr>
           <tr>
-            <td>{{Form::radio('t18', 'endo')}}</td>
-            <td>{{Form::radio('t18', 'fill')}}</td>
-            <td>{{Form::radio('t18', 'extr')}}</td>
             <td>{{Form::radio('t18', 'crown')}}</td>
+            <td>{{Form::radio('t18', 'extr')}}</td>
+            <td>{{Form::radio('t18', 'fill')}}</td>
+            <td>{{Form::radio('t18', 'endo')}}</td>
             <td>{{Form::radio('t18', 'inpl')}}</td>
             <td>18</td>
           </tr>
@@ -104,66 +103,66 @@
             <td colspan="5" style="height:4px; background:gray"></td>
           </tr>
           <tr>
-            <td>{{Form::radio('t41', 'endo')}}</td>
-            <td>{{Form::radio('t41', 'fill')}}</td>
-            <td>{{Form::radio('t41', 'extr')}}</td>
             <td>{{Form::radio('t41', 'crown')}}</td>
+            <td>{{Form::radio('t41', 'extr')}}</td>
+            <td>{{Form::radio('t41', 'fill')}}</td>
+            <td>{{Form::radio('t41', 'endo')}}</td>
             <td>{{Form::radio('t41', 'inpl')}}</td>
             <td>41</td>
           </tr>
           <tr>
-            <td>{{Form::radio('t42', 'endo')}}</td>
-            <td>{{Form::radio('t42', 'fill')}}</td>
-            <td>{{Form::radio('t42', 'extr')}}</td>
             <td>{{Form::radio('t42', 'crown')}}</td>
+            <td>{{Form::radio('t42', 'extr')}}</td>
+            <td>{{Form::radio('t42', 'fill')}}</td>
+            <td>{{Form::radio('t42', 'endo')}}</td>
             <td>{{Form::radio('t42', 'inpl')}}</td>
             <td>42</td>
           </tr>
           <tr>
-            <td>{{Form::radio('t43', 'endo')}}</td>
-            <td>{{Form::radio('t43', 'fill')}}</td>
-            <td>{{Form::radio('t43', 'extr')}}</td>
             <td>{{Form::radio('t43', 'crown')}}</td>
+            <td>{{Form::radio('t43', 'extr')}}</td>
+            <td>{{Form::radio('t43', 'fill')}}</td>
+            <td>{{Form::radio('t43', 'endo')}}</td>
             <td>{{Form::radio('t43', 'inpl')}}</td>
             <td>43</td>
           </tr>
           <tr>
-            <td>{{Form::radio('t44', 'endo')}}</td>
-            <td>{{Form::radio('t44', 'fill')}}</td>
-            <td>{{Form::radio('t44', 'extr')}}</td>
             <td>{{Form::radio('t44', 'crown')}}</td>
+            <td>{{Form::radio('t44', 'extr')}}</td>
+            <td>{{Form::radio('t44', 'fill')}}</td>
+            <td>{{Form::radio('t44', 'endo')}}</td>
             <td>{{Form::radio('t44', 'inpl')}}</td>
             <td>44</td>
           </tr>
           <tr>
-            <td>{{Form::radio('t45', 'endo')}}</td>
-            <td>{{Form::radio('t45', 'fill')}}</td>
-            <td>{{Form::radio('t45', 'extr')}}</td>
             <td>{{Form::radio('t45', 'crown')}}</td>
+            <td>{{Form::radio('t45', 'extr')}}</td>
+            <td>{{Form::radio('t45', 'fill')}}</td>
+            <td>{{Form::radio('t45', 'endo')}}</td>
             <td>{{Form::radio('t45', 'inpl')}}</td>
             <td>45</td>
           </tr>
           <tr>
-            <td>{{Form::radio('t46', 'endo')}}</td>
-            <td>{{Form::radio('t46', 'fill')}}</td>
-            <td>{{Form::radio('t46', 'extr')}}</td>
             <td>{{Form::radio('t46', 'crown')}}</td>
+            <td>{{Form::radio('t46', 'extr')}}</td>
+            <td>{{Form::radio('t46', 'fill')}}</td>
+            <td>{{Form::radio('t46', 'endo')}}</td>
             <td>{{Form::radio('t46', 'inpl')}}</td>
             <td>46</td>
           </tr>
           <tr>
-            <td>{{Form::radio('t47', 'endo')}}</td>
-            <td>{{Form::radio('t47', 'fill')}}</td>
-            <td>{{Form::radio('t47', 'extr')}}</td>
             <td>{{Form::radio('t47', 'crown')}}</td>
+            <td>{{Form::radio('t47', 'extr')}}</td>
+            <td>{{Form::radio('t47', 'fill')}}</td>
+            <td>{{Form::radio('t47', 'endo')}}</td>
             <td>{{Form::radio('t47', 'inpl')}}</td>
             <td>47</td>
           </tr>
           <tr>
-            <td>{{Form::radio('t48', 'endo')}}</td>
-            <td>{{Form::radio('t48', 'fill')}}</td>
-            <td>{{Form::radio('t48', 'extr')}}</td>
             <td>{{Form::radio('t48', 'crown')}}</td>
+            <td>{{Form::radio('t48', 'extr')}}</td>
+            <td>{{Form::radio('t48', 'fill')}}</td>
+            <td>{{Form::radio('t48', 'endo')}}</td>
             <td>{{Form::radio('t48', 'inpl')}}</td>
             <td>48</td>
           </tr>

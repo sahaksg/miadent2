@@ -11683,11 +11683,11 @@ input[type=text]:focus {
 }
 
 .decor:hover {
-  background-color: #DA7108;
+  background-color: #da7108;
 }
 
 #dropdecor {
-  background-color: #343A40;
+  background-color: #343a40;
   border: 0px;
 }
 
@@ -11697,6 +11697,11 @@ input[type=text]:focus {
 
 #dropdecor > a:hover {
   color: black;
+}
+
+.fade {
+  opacity: 1;
+  transition: opacity 0.15s linear;
 }
 
 /*!

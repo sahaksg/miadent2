@@ -24,7 +24,7 @@
         <tr>
           <th>N/N</th>
           <th>Inpl</th>
-          <th>Ebdo</th>
+          <th>Endo</th>
           <th>Fill</th>
           <th>Extr</th>
           <th>Crown</th>
@@ -58,10 +58,10 @@
             "35"=>$skizb->t35,
             "36"=>$skizb->t36,
             "37"=>$skizb->t37,
-            "38"=> $skizb->t38,
+            "38"=>$skizb->t38,
             "41"=>$skizb->t41,
-            "42"=> $skizb->t42,
-            "43"=> $skizb->t43,
+            "42"=>$skizb->t42,
+            "43"=>$skizb->t43,
             "44"=>$skizb->t44,
             "45"=>$skizb->t45,
             "46"=>$skizb->t46,
@@ -76,7 +76,7 @@
                 switch ($value){
                   case 'inpl':
                       echo "<tr><td>".$key."</td>
-                            <td>X</td>
+                            <td><i class='fa fa-check' aria-hidden='true'></i></td>
                             <td></td>
                             <td></td>
                             <td></td>
@@ -86,14 +86,14 @@
                       echo "<tr><td>".$key."</td>
                             <td></td>
                             <td></td>
-                            <td>X</td>
+                            <td><i class='fa fa-check' aria-hidden='true'></i></td>
                             <td></td>
                             <td></td></tr>";
                   break;
                   case 'endo':
                   echo "<tr><td>".$key."</td>
                         <td></td>
-                        <td>X</td>
+                        <td><i class='fa fa-check' aria-hidden='true'></i></td>
                         <td></td>
                         <td></td>
                         <td></td></tr>";
@@ -103,7 +103,7 @@
                       <td></td>
                       <td></td>
                       <td></td>
-                      <td>X</td>
+                      <td><i class='fa fa-check' aria-hidden='true'></i></td>
                       <td></td></tr>";
                   break;
                   case 'crown':
@@ -112,30 +112,16 @@
                       <td></td>
                       <td></td>
                       <td></td>
-                      <td>X</td></tr>";
+                      <td><i class='fa fa-check' aria-hidden='true'></i></td></tr>";
                   break;
                 }
                }
               }
               ?>
-         
-        
-       
-        
-      </table>
-      
-   
-    
-    
-
-  </div>
-  <a href='/skizbs' class="btn btn-primary"><i class="fa fa-chevron-left" aria-hidden="true"></i> BACK</a>
-  
-</div>
-    
-   
-    
-    
+        </table>
+      </div>
+  {{-- <a href='/skizbs' class="btn btn-primary"><i class="fa fa-chevron-left" aria-hidden="true"></i> BACK</a> --}}
+  </div>  
 @endsection
 
        

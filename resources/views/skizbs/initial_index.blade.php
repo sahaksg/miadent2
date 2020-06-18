@@ -9,9 +9,9 @@
   
   @endif
 </div>
-<div class="jumbotron" >
+<div class="jumbotron border border-info" style="width: 86%" >
   <p style="margin-top:0; text-align:center;">Initial Patients Registry:</p>
-  <div class="row" style="text-align:center">
+  <div class="row justify-content-sm-center align-items-center" >
     <div class="col col-md-3">
       <form class="form-inline" role='search' method='get' action="/searchinit/{{$userid}}" style="margin-top: 6px;">
         <div class="input-group" >
@@ -23,7 +23,7 @@
        
       </form>
     </div>
-    <div class="col col-md-2 pt-2">
+    <div class="col col-md-1 pt-2">
       <a href='/skizbs/create' class="btn btn-success">Add Initial card</a>
     </div>
     

@@ -6,6 +6,7 @@
 
 <div class="jumbotron" style="padding-top: 1%">
     <h3>Found <b>{{count($apps)}}</b> patient(s)</h3>
+    
     {{-- <a class="btn btn-primary" href='/dashboard'>Dashboard</a> --}}
     @if(count($apps) >0)
     <table id='test-table33' class="table  table-hover table-responsive table-cursor w-100 d-block d-md-table" >
@@ -15,8 +16,8 @@
                 <th>Phone</th>
                 <th>Doctor</th>
                 <th>Schedule date/time</th>
-                <th>Remove</th>                
-                <th>Save</th>                
+                <th></th>                
+                <th></th>                
             </tr>
         </thead>
         <tbody>
@@ -35,12 +36,12 @@
                     <?php
                     switch ($app->user_id){
                         case '8':
-                        echo '<p style="font-weight: bolder; font-style: italic">Liza</p>';
-                    break;
-                    case '9':
-                    echo '<p style="font-weight: bolder; font-style: italic">Karo</p>';
-                    break;
-                    }
+                            echo '<p style="font-weight: bolder; font-style: italic">Liza</p>';
+                            break;
+                        case '9':
+                            echo '<p style="font-weight: bolder; font-style: italic">Karo</p>';
+                            break;
+                        }
                     ?>
                 </td>
 				<td>
@@ -51,7 +52,7 @@
                     if($app->schedule_end){
                         $array= (explode(" ",$app->schedule_end));
                         $concat=$array[0]."T".$array[1];
-                      echo "<input type='datetime-local' name='datetime' 
+                    echo "<input type='datetime-local' name='datetime' 
                           min='2020-06-01T00:00' max='2035-06-14T00:00' value='$concat'>";
                     }
                   
@@ -63,7 +64,8 @@
                 <td>
                     {!!Form::open(['action' =>['DashboardController@destroy', $app->id], 'method'=>'POST' ])!!}
                     {{Form::hidden('_method', 'Delete')}}
-                    {{Form::submit('DELETE', ['class'=>'btn btn-danger', 'onclick'=>'return confirm(\'are you sure?\')'])}}
+                    {{Form::submit('DELETE', ['class'=>'btn btn-danger btn-sm', 'onclick'=>'return confirm(\'are you sure?\')'])}}
+                    {{-- {{Form::submit('DELETE', ['class'=>'btn btn-danger show-alert'])}} --}}
                     {!!Form::close()!!}
                 </td>
                

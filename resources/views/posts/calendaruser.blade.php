@@ -16,6 +16,7 @@
    <div class="panel panel-default">
          <div class="panel-heading">
              <h4>Patients Schedule </h4>
+             
              <div class="time" style='display:none; '>
               <input id="pname" type="text" placeholder="Name">
               <input id="phone" type="text" placeholder="Phone">
@@ -34,6 +35,7 @@
         </div>
         
     </div>
+    
    
    
 </div>
