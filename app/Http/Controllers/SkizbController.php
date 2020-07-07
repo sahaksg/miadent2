@@ -101,6 +101,7 @@ class SkizbController extends Controller
             "t37" => "",
             "t38" => "",
         ]);
+       
         $post = new Orthop();
         $post->name = $request->input('name');
         $post->phone = $request->input('phone');

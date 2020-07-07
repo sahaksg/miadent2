@@ -21,52 +21,71 @@ class AppointmentsController extends Controller
      */
     public function index()
     {
+        
         $user_id=auth()->user()->id;
-        // dd( $user_id);
-        return view('inc.ajaxRequest');
+        $data = DB::table("appointments")
+            ->select('id', 'name', 'phone','note','schedule_end', 'user_id')->where('user_id',$user_id)->get();
+        // dd( $data);
+        return view('pages.rrr')->with('data', $data);
+        // return view('inc.ajaxRequest');
+    }
+    public function test11(Request $request){
+
+        // dd($request->all());
+        $array=[];      
+        $input = $request->all();
+        foreach ($input as $key => $value) {
+           array_push($array,$value);
+        }
+        // dd($array[4]."T".$array[3]);
+        $post = new Appointment();
+        $post->name=$array[0];
+        $post->phone=$array[1];       
+        $post->note=$array[2];       
+        $post->schedule_end=$array[4]."T".$array[3];
+        $post->user_id=$array[5];       
+       
+       if($post->save()){
+         return redirect()->back()->with("success", "Appointment is Booked!");
+       }
+
     }
     public function ajaxRequest()
 
     {
-        
+        // return "123";
         // return view('inc.ajaxRequest');
-        return redirect('posts/calendar')->with("success", "Booked");
+        // return redirect('posts/calendar')->with("success", "Booked");
 
     }
      
     public function ajaxRequestPost(Request $request)
 
     {
-        $array=[];
-        // return "123";
-        //  dd($request);
-        // $input = $request->all();
-        $input = $request->all();
-        // return view("inc.ttt")->with('input', $input);
-    //    dd($request);
+        // dd($request);
+    //     $array=[];
+      
+    //     $input = $request->all();
+    
 
-        foreach ($input as $key => $value) {
-            echo $key."-".$value."<br>";
-            // array_push($array,[$key=>$value]);
-            array_push($array,$value);
-        }
-        // dd($array[0]);
-        $data = array('name'=>$array[3], 'phone'=>'444', 'pgender'=>'male');
-        // dd($data);
-        // DB::table('orthops')->insert($data);
+    //     foreach ($input as $key => $value) {
+    //         echo $key."-".$value."<br>";
+           
+    //         array_push($array,$value);
+    //     }
+       
+    //     $data = array('name'=>$array[3], 'phone'=>'444', 'pgender'=>'male');
+       
+    //     $post = new Appointment();
+    //     $post->name=$array[3];
+    //     $post->phone=$array[4];
+       
+    //     $post->user_id=$array[1];
+    //     $post->schedule_end=$array[0]."T".$array[2];
+       
+    //    if($post->save()){
         
-        // return response()->json(['success'=>'Got Simple Ajax Request.']);
-        // return response()->json([]);
-        $post = new Appointment();
-        $post->name=$array[3];
-        $post->phone=$array[4];
-        // $post->pgender="male";
-        $post->user_id=$array[1];
-        $post->schedule_end=$array[0]."T".$array[2];
-        // dd($post->schedule_end);
-       if($post->save()){
-        
-       }
+    //    }
            
         
         

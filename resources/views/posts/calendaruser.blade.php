@@ -4,11 +4,7 @@
 
 <div class="container" style="width: 55%">
   <div id='ale' class="alert alert-success" style="display:none"></div>
-@if (\Session::has('success'))
-      <div  class="alert alert-success">
-        <p>{{ \Session::get('success') }}</p>
-      </div><br />
-     @endif
+
      <div id="user_id" style="display:none">
       {{$id}}
     </div>
@@ -18,13 +14,16 @@
              <h4>Patients Schedule </h4>
              
              <div class="time" style='display:none; '>
-              <input id="pname" type="text" placeholder="Name">
-              <input id="phone" type="text" placeholder="Phone">
-              <input id='time_inp' type='time'>
-              <input id='day' type='hidden' >
-              <input id='day1' type='hidden'>
-             
-              <button id='book' class="btn btn-primary">Book</button>
+             <form action='/test11' method='get'>
+              <input class ='call_inps' id="pname" type="text" placeholder="Name" name='name'>
+              <input class ='call_inps' id="phone" type="text" placeholder="Phone" name='phone'>
+              <input class ='call_inps' id='note_call' type='text' placeholder="Notes..." name='note'>
+              <input id='time_inp' type='time' name='time'>             
+              <input id='jsdate' type='hidden' name='jsdate' value=''>
+              <input id='user_id' type='hidden' name='id' value={{$id}}>              
+              <button id='book' class="btn btn-primary" type='submit'>Book</button>
+             </form>
+              
             </div>
          </div>
          <div class="panel-body" >
@@ -55,151 +54,52 @@
 
 
   $(document).ready(function(){
-
-    $.ajaxSetup({
-      headers: {
-        'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-        }
-    });
-
     var userId=$(this).find("#user_id").text();
+    function mainFunction(){
+      var attribute = this.getAttribute("data-date");
+      var content=$(this).text();
+       if(userId===10){          
+        }else{
+          $(".time").css({
+              display: "block"
+            });
+            $('#jsdate').val(attribute)
+          }
+         
+        }
 
+    // Current month
+    var mDays=document.getElementsByClassName('fc-day-number');
+ 
+    for (var i = 0; i < mDays.length; i++) {
+        mDays[i].addEventListener('click', mainFunction, false);
+      }
+    //  end current month
+     // Next month
+    $(this).find(".fc-next-button").click(function(){
+     
+      var mDays=document.getElementsByClassName('fc-day-number');
+      for (var i = 0; i < mDays.length; i++) {
+        mDays[i].addEventListener('click', mainFunction, false);
+      }
+    });
+    //  end next month
     $(this).find(".fc-today-button").click(function(){
       var mDays=document.getElementsByClassName('fc-day-number');
-      console.log(mDays);
-      
-      var myFunction = function() {
-        
-        if(userId===10){
-          
-        }else{
-          
-              var attribute = this.getAttribute("data-date");
-              var content=$(this).text();
-              
-              // var data=$(this).attr("data-date");
-              $(".time").css({
-                display: "block"
-              });
-              var day=$("#day").val(content);
-              var daydate=$("#day1").val(attribute);
-    
-            }
-      }
       for (var i = 0; i < mDays.length; i++) {
-        mDays[i].addEventListener('click', myFunction, false);
+        mDays[i].addEventListener('click', mainFunction, false);
       }
-         
-    })
-
-    $(this).find(".fc-next-button").click(function(){
-      
-      var mDays=document.getElementsByClassName('fc-day-number');
-      console.log(mDays);
-
-      var myFunction = function() {
-          
-        if(userId===10){
-          
-        }else{
-              var attribute = this.getAttribute("data-date");
-              var content=$(this).text();
-              
-              // var data=$(this).attr("data-date");
-              $(".time").css({
-                display: "block"
-              });
-              var day=$("#day").val(content);
-              var daydate=$("#day1").val(attribute);
-            }
-          
-          
-      };
-      for (var i = 0; i < mDays.length; i++) {
-        mDays[i].addEventListener('click', myFunction, false);
-      }
-    })
-
+    });
+    // Prev month
     $(this).find(".fc-prev-button").click(function(){
       var mDays=document.getElementsByClassName('fc-day-number');
-      console.log(mDays);
-      var myFunction = function() {
-          
-        if(userId===10){
-          
-        }else{
-              var attribute = this.getAttribute("data-date");
-              var content=$(this).text();
-              
-              // var data=$(this).attr("data-date");
-              $(".time").css({
-                display: "block"
-              });
-              var day=$("#day").val(content);
-              var daydate=$("#day1").val(attribute);
-            }
-          
-          
-      };
       for (var i = 0; i < mDays.length; i++) {
-        mDays[i].addEventListener('click', myFunction, false);
+        mDays[i].addEventListener('click', mainFunction, false);
       }
-    })
-
-    
-    $(this).find(".fc-day-number").click(function(){
-     
-      if(userId===10){
-          
-        }else{
-          var content=$(this).text();
-          var data=$(this).attr("data-date");
-          $(".time").css({
-            display: "block"
-          });
-          var day=$("#day").val(content);
-        var daydate=$("#day1").val(data);
-        }
-             
     });
     
 
-    $("#book").click(function(){
-    
-      var day=$("#day").val();
-      var daydate=$("#day1").val();
-      var user_id=userId;
-      var time=$("#time_inp").val();
-      var pname=$("#pname").val();
-      var phone=$("#phone").val();
-      // alert(user_id+" "+time+" "+pname+" "+day+" "+daydate)
-
-      $.ajax({
-          type:'POST',
-          url:'/ajaxRequest',
-          data:{
-           
-          // daypopox:day,
-          daydatepopox:daydate, 
-          useridpopox:user_id, 
-          timepopox:time,
-          pnamepopox:pname,
-          phonepopox:phone
-         
-          },
-          success:function(data){
-                  // $("#test2").html(data)
-                  window.location.reload();
-                  $("#ale").css({
-                    display: "block"
-                  })
-                  $("#ale").html("<h3>Appointment Successully Booked!</h3>")
-            } 
-      })
-    })
-      
-     
-    })
+});
   
 </script>
 

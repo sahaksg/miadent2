@@ -9,7 +9,7 @@
 @endif
 
 @if(session('success'))
-<div class="alert alert-success">
+<div class="alert alert-success" style='width:32vw; margin:0 auto;'>
   {{session('success')}}
 </div>
 @endif

@@ -57,7 +57,9 @@
           font-size: 3.5rem;
         }
       } 
-            
+              .call_inps{
+                width:18vh;
+            }
          
                  
         </style>

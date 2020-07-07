@@ -39,6 +39,7 @@
       <div class="col col-sm-2 newmenu">
         <ul>
           <li class="decor"> <a class="nav-link" href="/skizbs"><i class="fa fa-user-plus" aria-hidden="true"></i> Initial Status</a></li>
+          <li class="decor"> <a class="nav-link" href="/phone"><i class="fa fa-phone" aria-hidden="true"></i> Phone regs</a></li>
           <li class="decor"><a class="nav-link" href="/calendarall/{{$user->id}}"><i class="fa fa-calendar" aria-hidden="true"></i> Calendar</a></li>
           
         </ul>

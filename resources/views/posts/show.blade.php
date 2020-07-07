@@ -111,18 +111,23 @@
         <div class="col col-md-2">
           {{Form::text('notes', $post->notes, ['placeholder'=>'Notes'], ['class' => 'form-control'])}}
         </div>
-        <div class="col col-md-3 text-center " style="border: 3px groove white; padding:1%; margin-left:5%">
+        <div class="col col-md-4 text-center " style="border: 3px groove white; padding:1%; margin-left:5%">
           <?php 
           $toDay=date("Y/m/d h:i");
           $now="2020-06-01T00:00";
+
+          $now_date=date("Y-m-d");
+          $now_time=date("h:i:s");
+          $now_full=$now_date."T".$now_time;
+
           if(!$post->schedule_end){
-            echo "<p id='toDay'>Now: ".$toDay."</p><label>Next Visit<input type='datetime-local' name='datetime' 
-                min='2020-06-01T00:00' max='2035-06-14T00:00' value='$now'></label>";
+            echo "<label>Next Visit: <input type='datetime-local' name='datetime' 
+               max='2035-06-14T00:00' value='$now_full'></label>";
           }else{
             $array= (explode(" ",$post->schedule_end));
             $concat=$array[0]."T".$array[1];
-            echo "<input type='datetime-local' name='datetime' title='next visit' 
-                min='2020-06-01T00:00' max='2035-06-14T00:00' value='$concat'>";
+            echo "<p id='toDay'>Now: ".$toDay."</p><label><input type='datetime-local' name='datetime' title='next visit' 
+                min='2020-06-01T00:00' max='2035-06-14T00:00' value='$concat'></label>";
           }
           ?>
         </div>

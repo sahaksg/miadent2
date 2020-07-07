@@ -74,3 +74,9 @@ Route::resource('appointments', 'AppointmentsController');
 
 Route::get('ajaxRequest', 'AppointmentsController@ajaxRequest');
 Route::post('ajaxRequest', 'AppointmentsController@ajaxRequestPost');
+Route::get('/test11', 'AppointmentsController@test11');
+
+Route::get('/phone', 'AppointmentsController@index');
+// Route::get('/phone', function(){
+//     return view('pages.rrr');
+// });
